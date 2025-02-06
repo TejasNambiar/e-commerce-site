@@ -1,9 +1,10 @@
 import './App.css'
-import { BrowserRouter as Router,  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Home } from './components/Home'
 import { ProductDetails } from './components/ProductDetails';
 import axios from 'axios'
 import { useState, useEffect } from 'react';
+import Cart from './components/Cart';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -16,12 +17,11 @@ function App() {
 
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home products={products}/>}/>
-          <Route path="/product/:id" element={<ProductDetails products={products}/>}/>
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home products={products}/>}/>
+        <Route path="/product/:id" element={<ProductDetails products={products}/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+      </Routes>
     </div>
   )
 }
