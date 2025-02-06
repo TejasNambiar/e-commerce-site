@@ -1,0 +1,6 @@
+.product-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensures proper grid layout */
+  gap: 20px; /* Adds spacing */
+  padding: 20px;
+}
