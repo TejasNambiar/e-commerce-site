@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/ProductCard.css'
+import { useCart } from '../context/CartContext';
 
 export const ProductCard = ({ product,  toggleDescription}) => {
+    const {addToCart} = useCart() // Get addToCart function from context
+
     const { title, price, description, image } = product;
   
     return (
@@ -18,7 +21,8 @@ export const ProductCard = ({ product,  toggleDescription}) => {
             <Link to={`/product/${product.id}`}>View Details</Link>
           </button>
           <br />
-          <button>Add To Cart</button>
+          {/* Add to Cart button */}
+          <button onClick={() => addToCart(product)}>Add To Cart</button>
         </div>
       </div>
     );

@@ -4,7 +4,6 @@ import '../styles/ProductMenu.css'
 export default function ProductList({products}) {
   return (
     <div>
-        ProductList
         <div className='product-menu'>
             {
                 products.map(product =>{
